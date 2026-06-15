@@ -94,6 +94,11 @@ img {
 	height: auto;
 	border-radius: 8px;
 }
+header img {
+	height: 60px !important;
+	width: auto !important;
+	border-radius: 5 !important;s
+}
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));

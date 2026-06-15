@@ -1,79 +1,258 @@
 ---
-import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Articles</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+	<div class="top-bar">
+		<div class="top-left">
+			<a href="/tip" class="top-link">Got a tip?</a>
+			<a href="/newsletter" class="top-link">Newsletter</a>
 		</div>
-		<div class="social-links">
-			<a href="https://tiktok.com/@SSlaoui" target="_blank">
-				<span class="sr-only">Follow on TikTok</span>
-				<svg viewBox="0 0 24 24" aria-hidden="true" width="28" height="28"
-					><path
-						fill="currentColor"
-						d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"
-					></path></svg
-				>
+		<div class="top-center">
+			<a href="/" class="logo-link">
+				<img src="/wh-logo.png" alt="WKND Harvest" class="logo-img" />
+				<span class="logo-text">WKND Harvest</span>
 			</a>
 		</div>
+		<div class="top-right">
+			<a href="/signin" class="top-link">Sign In</a>
+			<button class="search-btn" id="searchToggle" aria-label="Search">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<circle cx="11" cy="11" r="8"></circle>
+					<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+				</svg>
+			</button>
+		</div>
+	</div>
+	<nav class="category-nav">
+		<HeaderLink href="/blog">All</HeaderLink>
+		<HeaderLink href="/tech">Tech</HeaderLink>
+		<HeaderLink href="/science">Science</HeaderLink>
+		<HeaderLink href="/sports">Sports</HeaderLink>
+		<HeaderLink href="/celebs">Celebs</HeaderLink>
+		<HeaderLink href="/lifehacks">Life Hacks</HeaderLink>
+		<HeaderLink href="/money">Money</HeaderLink>
+		<HeaderLink href="/travel">Travel</HeaderLink>
 	</nav>
+	<div class="search-bar" id="searchBar">
+		<div class="search-inner">
+			<input type="text" placeholder="Search WKND Harvest..." class="search-input" id="searchInput" />
+			<button class="search-close" id="searchClose">✕</button>
+		</div>
+	</div>
 </header>
+<div class="search-overlay" id="searchOverlay"></div>
+
+<script>
+	const toggle = document.getElementById('searchToggle');
+	const bar = document.getElementById('searchBar');
+	const close = document.getElementById('searchClose');
+	const input = document.getElementById('searchInput');
+	const overlay = document.getElementById('searchOverlay');
+
+	toggle.addEventListener('click', () => {
+		bar.classList.toggle('open');
+		overlay.classList.toggle('open');
+		if (bar.classList.contains('open')) input.focus();
+	});
+	close.addEventListener('click', () => {
+		bar.classList.remove('open');
+		overlay.classList.remove('open');
+	});
+	overlay.addEventListener('click', () => {
+		bar.classList.remove('open');
+		overlay.classList.remove('open');
+	});
+</script>
+
 <style>
 	header {
-		margin: 0;
-		padding: 0 1em;
 		background: #0a0a0a;
-		box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+		border-bottom: 2px solid #333;
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		margin-bottom: 2rem;
 	}
-	h2 {
-		margin: 0;
-		font-size: 1.1em;
-		font-weight: 800;
-		letter-spacing: -0.02em;
-		text-transform: uppercase;
-	}
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-		color: #ffffff;
-	}
-	nav {
+	.top-bar {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		height: 56px;
+		padding: 1.5rem 2rem;
+		border-bottom: 1px solid #1a1a1a;
+		position: relative;
+		min-height: 100px;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: #aaaaaa;
-		border-bottom: 3px solid transparent;
-		text-decoration: none;
-		font-size: 0.85em;
-		font-weight: 500;
-		letter-spacing: 0.03em;
-		text-transform: uppercase;
-	}
-	nav a.active {
-		text-decoration: none;
-		color: #ffffff;
-		border-bottom-color: #ffffff;
-	}
-	.social-links,
-	.social-links a {
+	.top-left {
 		display: flex;
-		color: #aaaaaa;
+		gap: 1.2rem;
+		align-items: center;
 	}
-	.social-links a:hover {
+	.top-center {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.3rem;
+	}
+	.top-right {
+		display: flex;
+		gap: 1.2rem;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	.logo-link {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-decoration: none;
+		gap: 0.3rem;
+	}
+	.logo-img {
+		height: 48px;
+		width: auto;
+		border-radius: 0;
+	}
+	.logo-text {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-weight: 800;
+		font-size: 0.72rem;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
 		color: #ffffff;
+	}
+	.top-link {
+		font-size: 0.72rem;
+		font-weight: 500;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: #aaaaaa;
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+	.top-link:hover {
+		color: #ffffff;
+	}
+	.search-btn {
+		background: none;
+		border: none;
+		color: #aaaaaa;
+		cursor: pointer;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		transition: color 0.2s;
+	}
+	.search-btn:hover {
+		color: #ffffff;
+	}
+	.category-nav {
+		display: flex;
+		justify-content: center;
+		padding: 0 2rem;
+		overflow-x: auto;
+		border-bottom: 1px solid #1a1a1a;
+	}
+	.category-nav a {
+		padding: 0.75rem 1.1rem;
+		color: #aaaaaa;
+		text-decoration: none;
+		font-size: 0.75rem;
+		font-weight: 800;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		border-bottom: 2px solid transparent;
+		white-space: nowrap;
+		transition: color 0.2s, border-bottom-color 0.2s;
+	}
+	.category-nav a:hover,
+	.category-nav a.active {
+		color: #f5c518;
+		border-bottom-color: #f5c518;
+	}
+	.search-bar {
+		display: none;
+		position: relative;
+		z-index: 101;
+		background: #1e1e1e;
+		border-bottom: 1px solid #2a2a2a;
+	}
+	.search-bar.open {
+		display: block;
+	}
+	.search-inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		padding: 1rem 2rem;
+	}
+	.search-input {
+		width: 50%;
+		max-width: 600px;
+		background: #2a2a2a;
+		border: 1px solid #3a3a3a;
+		border-radius: 6px;
+		padding: 0.6rem 1rem;
+		color: #ffffff;
+		font-size: 0.9rem;
+		font-family: 'Inter', sans-serif;
+		outline: none;
+		transition: border-color 0.2s;
+	}
+	.search-input:focus {
+		border-color: #555;
+	}
+	.search-input::placeholder {
+		color: #555;
+	}
+	.search-close {
+		background: none;
+		border: none;
+		color: #555;
+		cursor: pointer;
+		font-size: 1rem;
+		transition: color 0.2s;
+	}
+	.search-close:hover {
+		color: #ffffff;
+	}
+	.search-overlay {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.7);
+		z-index: 99;
+		pointer-events: all;
+	}
+	.search-overlay.open {
+		display: block;
 	}
 	@media (max-width: 720px) {
-		.social-links {
-			display: none;
+		.top-bar {
+			padding: 1rem;
+			min-height: 80px;
+		}
+		.top-left {
+			gap: 0.8rem;
+		}
+		.top-link {
+			font-size: 0.65rem;
+		}
+		.category-nav {
+			padding: 0 0.5rem;
+			justify-content: flex-start;
+		}
+		.category-nav a {
+			padding: 0.6rem 0.7rem;
+			font-size: 0.65rem;
+		}
+		.search-input {
+			width: 85%;
 		}
 	}
 </style>
