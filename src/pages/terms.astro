@@ -1,0 +1,75 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Terms of Use | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="page-layout">
+			<h1>Terms of Use</h1>
+			<p class="updated">Last updated: June 16, 2026</p>
+
+			<section class="policy-section">
+				<h2>Using Our Site</h2>
+				<p>WKND Harvest is provided for your personal, non-commercial use. You may read, share, and link to our content. You may not scrape, republish, or redistribute our content in bulk without written permission.</p>
+			</section>
+
+			<section class="policy-section">
+				<h2>Content Accuracy</h2>
+				<p>We strive for accuracy in everything we publish. However, information changes, and we are not liable for decisions you make based on our content. Always verify critical information independently.</p>
+			</section>
+
+			<section class="policy-section">
+				<h2>User Submissions</h2>
+				<p>By submitting tips, comments, or other content to WKND Harvest, you grant us the right to use, edit, and publish that content. You confirm that you have the right to share anything you submit.</p>
+			</section>
+
+			<section class="policy-section">
+				<h2>Changes to Terms</h2>
+				<p>We may update these terms at any time. Continued use of the site after changes constitutes acceptance of the new terms.</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.page-layout {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 2rem;
+		color: #d0d0d0;
+		font-size: 1rem;
+		line-height: 1.8;
+	}
+	.page-layout h1 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 800;
+		color: #ffffff;
+		margin-bottom: 0.5rem;
+		letter-spacing: -0.03em;
+	}
+	.updated {
+		font-size: 0.85rem;
+		color: #555;
+		margin-bottom: 3rem;
+	}
+	.policy-section {
+		margin-bottom: 2.5rem;
+	}
+	.policy-section h2 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 1.2rem;
+		font-weight: 800;
+		color: #f5c518;
+		margin-bottom: 1rem;
+	}
+</style>

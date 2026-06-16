@@ -1,0 +1,87 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Careers | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="page-layout">
+			<h1>Work With Us</h1>
+			<p class="lead">We're building something new. If you're curious, fast, and obsessed with great stories, we want to meet you.</p>
+
+			<section class="policy-section">
+				<h2>Open Roles</h2>
+				<p>We don't have any full-time positions open right now, but we're always looking for:</p>
+				<ul>
+					<li>Freelance writers with expertise in tech, health, travel, or sports</li>
+					<li>Editors who can spot a weak lede from a mile away</li>
+					<li>Social media creators who understand Gen Z</li>
+					<li>Researchers who read Arabic, French, or Spanish</li>
+				</ul>
+			</section>
+
+			<section class="policy-section">
+				<h2>How to Apply</h2>
+				<p>Send your portfolio, a brief note about what you'd bring to WKND Harvest, and 2 story ideas to <a href="mailto:hello@wkndharvest.com">hello@wkndharvest.com</a>.</p>
+				<p>We read every email. If there's a fit, we'll be in touch within two weeks.</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.page-layout {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 2rem;
+		color: #d0d0d0;
+		font-size: 1rem;
+		line-height: 1.8;
+	}
+	.page-layout h1 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 800;
+		color: #ffffff;
+		margin-bottom: 1rem;
+		letter-spacing: -0.03em;
+	}
+	.lead {
+		font-size: 1.15rem;
+		color: #888;
+		margin-bottom: 3rem;
+		line-height: 1.6;
+	}
+	.policy-section {
+		margin-bottom: 2.5rem;
+	}
+	.policy-section h2 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 1.2rem;
+		font-weight: 800;
+		color: #f5c518;
+		margin-bottom: 1rem;
+	}
+	.policy-section ul {
+		padding-left: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.policy-section li {
+		margin-bottom: 0.5rem;
+	}
+	.policy-section a {
+		color: #f5c518;
+		text-decoration: none;
+	}
+	.policy-section a:hover {
+		text-decoration: underline;
+	}
+</style>

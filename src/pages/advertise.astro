@@ -1,0 +1,95 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Advertise | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="page-layout">
+			<h1>Advertise With Us</h1>
+			<p class="lead">Reach a globally curious, decision-making audience that actually reads.</p>
+
+			<section class="policy-section">
+				<h2>Our Audience</h2>
+				<ul>
+					<li>18-45 years old, globally mobile professionals</li>
+					<li>High interest in tech, travel, health, and personal finance</li>
+					<li>Multilingual: English, Arabic, French, Spanish speakers</li>
+					<li>Active on TikTok, X, and Instagram</li>
+				</ul>
+			</section>
+
+			<section class="policy-section">
+				<h2>Ad Formats</h2>
+				<ul>
+					<li>Newsletter sponsorships (The Weekly Harvest)</li>
+					<li>Native article partnerships</li>
+					<li>Category-specific banner placements</li>
+					<li>Social media collaborations</li>
+				</ul>
+			</section>
+
+			<section class="policy-section">
+				<h2>Get in Touch</h2>
+				<p>Email us at <a href="mailto:hello@wkndharvest.com">hello@wkndharvest.com</a> with "Advertising" in the subject line. Include your brand, goals, and budget range. We'll respond within 48 hours.</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.page-layout {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 2rem;
+		color: #d0d0d0;
+		font-size: 1rem;
+		line-height: 1.8;
+	}
+	.page-layout h1 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 800;
+		color: #ffffff;
+		margin-bottom: 1rem;
+		letter-spacing: -0.03em;
+	}
+	.lead {
+		font-size: 1.15rem;
+		color: #888;
+		margin-bottom: 3rem;
+		line-height: 1.6;
+	}
+	.policy-section {
+		margin-bottom: 2.5rem;
+	}
+	.policy-section h2 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 1.2rem;
+		font-weight: 800;
+		color: #f5c518;
+		margin-bottom: 1rem;
+	}
+	.policy-section ul {
+		padding-left: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.policy-section li {
+		margin-bottom: 0.5rem;
+	}
+	.policy-section a {
+		color: #f5c518;
+		text-decoration: none;
+	}
+	.policy-section a:hover {
+		text-decoration: underline;
+	}
+</style>

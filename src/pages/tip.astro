@@ -1,0 +1,173 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Got a Tip? | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="page-layout">
+			<h1>Got a Tip?</h1>
+			<p class="lead">We rely on our readers to find the stories that matter. If you know something we should cover, tell us here.</p>
+
+			<form class="tip-form" action="/tip" method="POST">
+				<div class="form-group">
+					<label for="tip-name">Your Name (optional)</label>
+					<input type="text" id="tip-name" name="name" placeholder="Anonymous is fine" />
+				</div>
+				<div class="form-group">
+					<label for="tip-email">Your Email (optional)</label>
+					<input type="email" id="tip-email" name="email" placeholder="So we can follow up if needed" />
+				</div>
+				<div class="form-group">
+					<label for="tip-category">What is this about?</label>
+					<select id="tip-category" name="category" required>
+						<option value="">Select a category</option>
+						<option value="tech">AI & Tech</option>
+						<option value="shopping">Shopping</option>
+						<option value="travel">Travel</option>
+						<option value="health">Health</option>
+						<option value="family">Family</option>
+						<option value="sports">Sports</option>
+						<option value="lifestyle">Lifestyle</option>
+						<option value="other">Other</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="tip-message">Your Tip</label>
+					<textarea id="tip-message" name="message" rows="8" placeholder="Tell us everything you know. Links, names, dates — the more detail, the better." required></textarea>
+				</div>
+				<div class="form-group checkbox-group">
+					<label class="checkbox-label">
+						<input type="checkbox" name="anonymous" />
+						<span>Keep me anonymous</span>
+					</label>
+				</div>
+				<button type="submit" class="submit-btn">Send Tip</button>
+			</form>
+
+			<div class="tip-note">
+				<p>We read every tip. If we use your story, we'll credit you however you want — by name, pseudonym, or not at all.</p>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.page-layout {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 2rem;
+		color: #d0d0d0;
+		font-size: 1rem;
+		line-height: 1.8;
+	}
+	.page-layout h1 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 800;
+		color: #ffffff;
+		margin-bottom: 1rem;
+		letter-spacing: -0.03em;
+	}
+	.lead {
+		font-size: 1.15rem;
+		color: #888;
+		margin-bottom: 3rem;
+		line-height: 1.6;
+	}
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+	.form-group label {
+		display: block;
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: #888;
+		margin-bottom: 0.4rem;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+	.form-group input,
+	.form-group select,
+	.form-group textarea {
+		width: 100%;
+		background: #111;
+		border: 1px solid #222;
+		border-radius: 6px;
+		padding: 0.75rem 1rem;
+		color: #fff;
+		font-family: 'Inter', sans-serif;
+		font-size: 0.95rem;
+		outline: none;
+		transition: border-color 0.2s;
+		box-sizing: border-box;
+	}
+	.form-group input:focus,
+	.form-group select:focus,
+	.form-group textarea:focus {
+		border-color: #f5c518;
+	}
+	.form-group input::placeholder,
+	.form-group textarea::placeholder {
+		color: #444;
+	}
+	.form-group select {
+		appearance: none;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 1rem center;
+	}
+	.checkbox-group { margin-top: -0.5rem; }
+	.checkbox-label {
+		display: flex !important;
+		align-items: center;
+		gap: 0.6rem;
+		cursor: pointer;
+		flex-direction: row !important;
+	}
+	.checkbox-label input {
+		width: auto !important;
+		accent-color: #f5c518;
+	}
+	.checkbox-label span {
+		font-size: 0.9rem;
+		color: #888;
+		text-transform: none;
+		letter-spacing: normal;
+		font-weight: 400;
+	}
+	.submit-btn {
+		background: #f5c518;
+		color: #000;
+		border: none;
+		border-radius: 6px;
+		padding: 0.85rem 2rem;
+		font-weight: 800;
+		font-size: 0.9rem;
+		cursor: pointer;
+		letter-spacing: 0.04em;
+		transition: background 0.2s, transform 0.1s;
+		width: 100%;
+	}
+	.submit-btn:hover {
+		background: #e0b015;
+		transform: translateY(-1px);
+	}
+	.tip-note {
+		margin-top: 2rem;
+		padding: 1.5rem;
+		background: #111;
+		border: 1px solid #1e1e1e;
+		border-radius: 6px;
+		font-size: 0.9rem;
+		color: #666;
+	}
+</style>

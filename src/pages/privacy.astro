@@ -1,0 +1,94 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Privacy Policy | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="page-layout">
+			<h1>Privacy Policy</h1>
+			<p class="updated">Last updated: June 16, 2026</p>
+
+			<section class="policy-section">
+				<h2>What We Collect</h2>
+				<p>When you subscribe to our newsletter, we collect your email address. When you submit a contact form or tip, we collect the information you voluntarily provide (name, email, message).</p>
+				<p>We do not collect browsing data, cookies for tracking, or sell your information to third parties.</p>
+			</section>
+
+			<section class="policy-section">
+				<h2>How We Use Your Data</h2>
+				<ul>
+					<li>To send you The Weekly Harvest newsletter if you subscribed</li>
+					<li>To respond to your messages, tips, or inquiries</li>
+					<li>To improve our content based on reader feedback</li>
+				</ul>
+			</section>
+
+			<section class="policy-section">
+				<h2>Third-Party Services</h2>
+				<p>We use Cloudflare for hosting and may use Brevo or Mailchimp for email delivery. These services have their own privacy policies and are GDPR-compliant.</p>
+			</section>
+
+			<section class="policy-section">
+				<h2>Your Rights</h2>
+				<p>You can unsubscribe from our newsletter at any time via the link in every email. You can request deletion of your data by emailing <a href="mailto:hello@wkndharvest.com">hello@wkndharvest.com</a>.</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.page-layout {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 2rem;
+		color: #d0d0d0;
+		font-size: 1rem;
+		line-height: 1.8;
+	}
+	.page-layout h1 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 800;
+		color: #ffffff;
+		margin-bottom: 0.5rem;
+		letter-spacing: -0.03em;
+	}
+	.updated {
+		font-size: 0.85rem;
+		color: #555;
+		margin-bottom: 3rem;
+	}
+	.policy-section {
+		margin-bottom: 2.5rem;
+	}
+	.policy-section h2 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 1.2rem;
+		font-weight: 800;
+		color: #f5c518;
+		margin-bottom: 1rem;
+	}
+	.policy-section ul {
+		padding-left: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.policy-section li {
+		margin-bottom: 0.5rem;
+	}
+	.policy-section a {
+		color: #f5c518;
+		text-decoration: none;
+	}
+	.policy-section a:hover {
+		text-decoration: underline;
+	}
+</style>
