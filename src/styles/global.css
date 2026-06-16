@@ -43,11 +43,18 @@ h5,
 h6 {
 	margin: 0 0 0.5rem 0;
 	color: rgb(var(--black));
-	line-height: 1.2;
+	line-height: 1.15;
 	font-family: var(--font-heading);
 	font-weight: 800;
-	letter-spacing: -0.02em;
+	letter-spacing: -0.03em;
 }
+
+h1 { font-size: clamp(2.2rem, 4vw, 3.5rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+h4 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+h5 { font-size: clamp(1rem, 1.5vw, 1.15rem); }
+h6 { font-size: 0.9rem; }
 h1 {
 	font-size: 3.052em;
 }
