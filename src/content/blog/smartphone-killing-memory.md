@@ -1,3 +1,4 @@
+---
 title: "AI Is Not Coming For Your Job. It's Coming For Your Excuses."
 description: "The real threat of AI isn't unemployment — it's the gap it creates between people who adapt and people who wait."
 pubDate: 2026-06-16
