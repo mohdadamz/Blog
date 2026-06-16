@@ -1,8 +1,8 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
@@ -12,38 +12,673 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+
+		<main class="home-layout">
+
+			<!-- HERO SECTION -->
+			<section class="hero-section">
+				<aside class="sidebar-left">
+					<h3 class="section-label">Latest</h3>
+					<div class="article-list">
+						<article class="list-item">
+							<span class="category-tag">AI & Tech</span>
+							<h4><a href="/blog/ai-work-future">Why AI Won't Replace You — But Will Change Everything About Your Job</a></h4>
+							<time>Jun 15, 2026</time>
+						</article>
+						<article class="list-item">
+							<span class="category-tag">Travel</span>
+							<h4><a href="/blog/morocco-hidden">The Real Morocco Nobody Shows on Instagram</a></h4>
+							<time>Jun 14, 2026</time>
+						</article>
+						<article class="list-item">
+							<span class="category-tag">Money</span>
+							<h4><a href="/blog/uae-savings">Why UAE Workers Save More Than Germans Earning Twice the Salary</a></h4>
+							<time>Jun 13, 2026</time>
+						</article>
+						<article class="list-item">
+							<span class="category-tag">Health</span>
+							<h4><a href="/blog/sleep-hack">The 90-Minute Sleep Hack That's Replacing 8-Hour Rules</a></h4>
+							<time>Jun 12, 2026</time>
+						</article>
+						<article class="list-item">
+							<span class="category-tag">Sports</span>
+							<h4><a href="/blog/ufc-money">How the UFC Became the Most Valuable Combat Sport on Earth</a></h4>
+							<time>Jun 11, 2026</time>
+						</article>
+					</div>
+				</aside>
+
+				<article class="hero-feature">
+					<a href="/blog/featured-post" class="feature-link">
+						<div class="feature-image">
+							<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" alt="Featured" />
+							<span class="feature-category">AI & Tech</span>
+						</div>
+						<div class="feature-content">
+							<h1>The Age of Agentic AI: What Happens When Software Starts Making Real Decisions</h1>
+							<p class="feature-excerpt">We're not talking about chatbots anymore. The next wave of AI doesn't assist — it acts. Here's what that means for your career, your business, and your life.</p>
+							<span class="read-more">Read the full story →</span>
+						</div>
+					</a>
+				</article>
+
+				<aside class="sidebar-right">
+					<h3 class="section-label">Trending</h3>
+					<div class="trending-list">
+						<article class="trend-item">
+							<span class="trend-num">01</span>
+							<div class="trend-content">
+								<h4><a href="/blog/trending-1">The Hidden Tax Advantages of Living in the UAE vs. Europe</a></h4>
+								<span class="trend-meta">12K reads</span>
+							</div>
+						</article>
+						<article class="trend-item">
+							<span class="trend-num">02</span>
+							<div class="trend-content">
+								<h4><a href="/blog/trending-2">Why German Workers Have Less Purchasing Power Than Gulf Expats</a></h4>
+								<span class="trend-meta">9.4K reads</span>
+							</div>
+						</article>
+						<article class="trend-item">
+							<span class="trend-num">03</span>
+							<div class="trend-content">
+								<h4><a href="/blog/trending-3">The Only 5 Supplements Worth Taking According to Science</a></h4>
+								<span class="trend-meta">8.1K reads</span>
+							</div>
+						</article>
+					</div>
+
+					<div class="editors-note">
+						<h3 class="section-label" style="margin-top:2rem">Editor's Pick</h3>
+						<a href="/blog/editors-pick" class="editors-card">
+							<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Editor's Pick" />
+							<p>The Man Who Walked Away From a $2M Job to Build Something That Matters</p>
+						</a>
+					</div>
+				</aside>
+			</section>
+
+			<!-- DIVIDER -->
+			<div class="section-divider"></div>
+
+			<!-- CATEGORY HIGHLIGHTS -->
+			<section class="category-highlights">
+
+				<!-- Travel -->
+				<div class="highlight-block">
+					<div class="highlight-header">
+						<span class="highlight-label">Travel</span>
+						<a href="/travel" class="see-all">See all →</a>
+					</div>
+					<div class="highlight-grid">
+						<article class="highlight-card large">
+							<img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" alt="Travel" />
+							<div class="card-overlay">
+								<span class="card-tag">Destinations</span>
+								<h3><a href="#">Bali Is Over. Here Are 5 Southeast Asian Islands That Still Feel Undiscovered</a></h3>
+							</div>
+						</article>
+						<div class="highlight-stack">
+							<article class="highlight-card small">
+								<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&q=80" alt="Paris" />
+								<div class="card-overlay">
+									<span class="card-tag">Cost of Living</span>
+									<h3><a href="#">The Real Cost of Living in Paris vs. Dubai in 2026</a></h3>
+								</div>
+							</article>
+							<article class="highlight-card small">
+								<img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=400&q=80" alt="Venice" />
+								<div class="card-overlay">
+									<span class="card-tag">Budget Travel</span>
+									<h3><a href="#">Venice's New Tourist Fee: What It Means for Budget Travelers</a></h3>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+
+				<!-- MARQUEE TICKER -->
+				<div class="ticker-wrap">
+					<div class="ticker">
+						<span>AI & Tech</span>
+						<span>·</span>
+						<span>Why Your Next Boss Might Be an AI Agent</span>
+						<span>·</span>
+						<span>Health</span>
+						<span>·</span>
+						<span>The Mediterranean Diet Isn't What You Think It Is</span>
+						<span>·</span>
+						<span>Sports</span>
+						<span>·</span>
+						<span>How the UFC Became the Most Valuable Combat Sport on Earth</span>
+						<span>·</span>
+						<span>Money</span>
+						<span>·</span>
+						<span>Smart Money Is Moving to Morocco's Startup Scene</span>
+						<span>·</span>
+						<span>Travel</span>
+						<span>·</span>
+						<span>The Real Morocco Nobody Shows on Instagram</span>
+						<span>·</span>
+					</div>
+				</div>
+
+				<!-- Health -->
+				<div class="highlight-block alt">
+					<div class="highlight-header">
+						<span class="highlight-label">Health</span>
+						<a href="/health" class="see-all">See all →</a>
+					</div>
+					<div class="highlight-grid reverse">
+						<div class="highlight-stack">
+							<article class="highlight-card small">
+								<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80" alt="Food" />
+								<div class="card-overlay">
+									<span class="card-tag">Nutrition</span>
+									<h3><a href="#">The Mediterranean Diet Isn't What You Think It Is</a></h3>
+								</div>
+							</article>
+							<article class="highlight-card small">
+								<img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=80" alt="Yoga" />
+								<div class="card-overlay">
+									<span class="card-tag">Wellness</span>
+									<h3><a href="#">Why Cold Plunges Are Overrated and What to Do Instead</a></h3>
+								</div>
+							</article>
+						</div>
+						<article class="highlight-card large">
+							<img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Fitness" />
+							<div class="card-overlay">
+								<span class="card-tag">Fitness</span>
+								<h3><a href="#">Zone 2 Cardio Is the Only Exercise Trend That Actually Works Long-Term</a></h3>
+							</div>
+						</article>
+					</div>
+				</div>
+
+				<!-- QUOTE BREAK -->
+				<div class="quote-break">
+					<blockquote>"The best stories aren't breaking news. They're the ones that change how you see the world."</blockquote>
+					— WKND Harvest
+				</div>
+
+				<!-- Money -->
+				<div class="highlight-block">
+					<div class="highlight-header">
+						<span class="highlight-label">Money & Careers</span>
+						<a href="/lifestyle/money" class="see-all">See all →</a>
+					</div>
+					<div class="highlight-grid">
+						<article class="highlight-card large">
+							<img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80" alt="Money" />
+							<div class="card-overlay">
+								<span class="card-tag">Work</span>
+								<h3><a href="#">The 4-Hour Workweek Is Dead. Here's What Replaced It.</a></h3>
+							</div>
+						</article>
+						<div class="highlight-stack">
+							<article class="highlight-card small">
+								<img src="https://images.unsplash.com/photo-1565514020176-db9e9acbb8ab?w=400&q=80" alt="Startup" />
+								<div class="card-overlay">
+									<span class="card-tag">Investing</span>
+									<h3><a href="#">Why Smart Money Is Moving to Morocco's Startup Scene</a></h3>
+								</div>
+							</article>
+							<article class="highlight-card small">
+								<img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&q=80" alt="Savings" />
+								<div class="card-overlay">
+									<span class="card-tag">Personal Finance</span>
+									<h3><a href="#">The Quiet Luxury of Having 6 Months of Expenses in Cash</a></h3>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+
+				<!-- Sports -->
+				<div class="highlight-block alt">
+					<div class="highlight-header">
+						<span class="highlight-label">Sports</span>
+						<a href="/sports" class="see-all">See all →</a>
+					</div>
+					<div class="four-grid">
+						<article class="four-card">
+							<img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&q=80" alt="Sports" />
+							<span class="card-tag-inline">Football</span>
+							<h3><a href="#">The Tactical Revolution That's Changing How Football Is Played</a></h3>
+						</article>
+						<article class="four-card">
+							<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&q=80" alt="Basketball" />
+							<span class="card-tag-inline">Basketball</span>
+							<h3><a href="#">Why the NBA Is the Most Globally Influential Sports League on Earth</a></h3>
+						</article>
+						<article class="four-card">
+							<img src="https://images.unsplash.com/photo-1568354270002-a8c7067a6b93?w=400&q=80" alt="Combat" />
+							<span class="card-tag-inline">Combat Sports</span>
+							<h3><a href="#">How the UFC Became the Most Valuable Combat Sport on Earth</a></h3>
+						</article>
+						<article class="four-card">
+							<img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=400&q=80" alt="Motorsport" />
+							<span class="card-tag-inline">Motorsport</span>
+							<h3><a href="#">F1's New Era: Why the Next Decade Will Be Its Most Competitive Ever</a></h3>
+						</article>
+					</div>
+				</div>
+
+			</section>
+
+			
+
 		</main>
+
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.home-layout {
+		width: 100%;
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 0 2rem;
+		box-sizing: border-box;
+	}
+
+	/* HERO */
+	.hero-section {
+		display: grid;
+		grid-template-columns: 260px 1fr 260px;
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+	@media (max-width: 1024px) {
+		.hero-section {
+			grid-template-columns: 1fr;
+		}
+		.sidebar-left, .sidebar-right {
+			display: none;
+		}
+	}
+
+	.section-label {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 0.65rem;
+		font-weight: 800;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: #f5c518;
+		margin-bottom: 1rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 1px solid #222;
+		display: block;
+	}
+
+	/* Left sidebar */
+	.sidebar-left .article-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+	.list-item {
+		border-bottom: 1px solid #1a1a1a;
+		padding-bottom: 1rem;
+	}
+	.list-item:last-child { border-bottom: none; }
+	.category-tag {
+		font-size: 0.6rem;
+		font-weight: 800;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #f5c518;
+		display: block;
+		margin-bottom: 0.3rem;
+	}
+	.list-item h4 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 0.88rem;
+		font-weight: 700;
+		line-height: 1.4;
+		margin: 0 0 0.3rem 0;
+	}
+	.list-item h4 a { color: #d0d0d0; text-decoration: none; }
+	.list-item h4 a:hover { color: #fff; }
+	.list-item time { font-size: 0.72rem; color: #444; }
+
+	/* Center feature */
+	.hero-feature {
+		background: #111;
+		border-radius: 8px;
+		overflow: hidden;
+		border: 1px solid #1e1e1e;
+	}
+	.feature-link { text-decoration: none; display: block; }
+	.feature-image {
+		position: relative;
+		height: 340px;
+		overflow: hidden;
+	}
+	.feature-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 0;
+		transition: transform 0.4s ease;
+	}
+	.hero-feature:hover .feature-image img {
+		transform: scale(1.03);
+	}
+	.feature-category {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		background: #f5c518;
+		color: #000;
+		font-size: 0.62rem;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		padding: 0.35rem 0.8rem;
+		border-radius: 3px;
+	}
+	.feature-content { padding: 1.75rem; }
+	.feature-content h1 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 1.75rem;
+		font-weight: 800;
+		line-height: 1.2;
+		margin-bottom: 0.75rem;
+		color: #ffffff;
+		letter-spacing: -0.02em;
+	}
+	.feature-excerpt {
+		font-size: 0.95rem;
+		color: #888;
+		line-height: 1.7;
+		margin-bottom: 1.2rem;
+	}
+	.read-more {
+		font-size: 0.78rem;
+		font-weight: 700;
+		color: #f5c518;
+		letter-spacing: 0.05em;
+	}
+
+	/* Right sidebar */
+	.trending-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+	.trend-item {
+		display: flex;
+		gap: 0.8rem;
+		align-items: flex-start;
+		border-bottom: 1px solid #1a1a1a;
+		padding-bottom: 1rem;
+	}
+	.trend-item:last-child { border-bottom: none; }
+	.trend-num {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 1.6rem;
+		font-weight: 800;
+		color: #2a2a2a;
+		line-height: 1;
+		min-width: 32px;
+	}
+	.trend-content h4 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 0.85rem;
+		font-weight: 700;
+		line-height: 1.4;
+		margin: 0 0 0.3rem 0;
+	}
+	.trend-content h4 a { color: #d0d0d0; text-decoration: none; }
+	.trend-content h4 a:hover { color: #fff; }
+	.trend-meta { font-size: 0.68rem; color: #555; }
+
+	.editors-card {
+		display: block;
+		text-decoration: none;
+		border: 1px solid #1e1e1e;
+		border-radius: 6px;
+		overflow: hidden;
+	}
+	.editors-card img {
+		width: 100%;
+		height: 140px;
+		object-fit: cover;
+		border-radius: 0;
+	}
+	.editors-card p {
+		padding: 0.75rem;
+		font-size: 0.85rem;
+		font-weight: 700;
+		color: #d0d0d0;
+		line-height: 1.4;
+		margin: 0;
+		font-family: 'Plus Jakarta Sans', sans-serif;
+	}
+	.editors-card:hover p { color: #fff; }
+
+	/* DIVIDER */
+	.section-divider {
+		height: 1px;
+		background: linear-gradient(to right, transparent, #333, transparent);
+		margin: 2rem 0 3rem;
+	}
+
+	/* CATEGORY HIGHLIGHTS */
+	.category-highlights {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+		margin-bottom: 3rem;
+	}
+	.highlight-block {
+		border-top: 2px solid #f5c518;
+		padding-top: 1.25rem;
+	}
+	.highlight-block.alt {
+		border-top-color: #333;
+	}
+	.highlight-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 1.25rem;
+	}
+	.highlight-label {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 0.72rem;
+		font-weight: 800;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: #f5c518;
+	}
+	.highlight-block.alt .highlight-label { color: #ffffff; }
+	.see-all {
+		font-size: 0.72rem;
+		font-weight: 600;
+		color: #555;
+		text-decoration: none;
+		letter-spacing: 0.05em;
+		transition: color 0.2s;
+	}
+	.see-all:hover { color: #f5c518; }
+
+	.highlight-grid {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 1.25rem;
+	}
+	.highlight-grid.reverse {
+		grid-template-columns: 1fr 2fr;
+	}
+	.highlight-stack {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+	.highlight-card {
+		position: relative;
+		overflow: hidden;
+		border-radius: 6px;
+		border: 1px solid #1e1e1e;
+		display: block;
+	}
+	.highlight-card img {
+		width: 100%;
+		object-fit: cover;
+		border-radius: 0;
+		display: block;
+		transition: transform 0.4s ease;
+	}
+	.highlight-card:hover img { transform: scale(1.04); }
+	.highlight-card.large img { height: 360px; }
+	.highlight-card.small img { height: 160px; }
+
+	.card-overlay {
+		padding: 1rem;
+		background: linear-gradient(to top, #0a0a0a 0%, transparent 100%);
+	}
+	.highlight-card.large .card-overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 2rem 1.25rem 1.25rem;
+	}
+	.card-tag {
+		font-size: 0.6rem;
+		font-weight: 800;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #f5c518;
+		display: block;
+		margin-bottom: 0.4rem;
+	}
+	.card-overlay h3 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 1rem;
+		font-weight: 700;
+		line-height: 1.3;
+		margin: 0;
+	}
+	.highlight-card.large .card-overlay h3 { font-size: 1.2rem; color: #fff; }
+	.highlight-card.small .card-overlay h3 { font-size: 0.88rem; }
+	.card-overlay h3 a { color: #d0d0d0; text-decoration: none; }
+	.card-overlay h3 a:hover { color: #fff; }
+
+	/* TICKER */
+	.ticker-wrap {
+		width: 100%;
+		overflow: hidden;
+		background: #111;
+		border-top: 1px solid #1e1e1e;
+		border-bottom: 1px solid #1e1e1e;
+		padding: 0.6rem 0;
+		margin: 0.5rem 0;
+	}
+	.ticker {
+		display: flex;
+		gap: 2rem;
+		white-space: nowrap;
+		animation: ticker 30s linear infinite;
+		width: max-content;
+	}
+	.ticker span {
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: #555;
+	}
+	.ticker span:nth-child(odd) { color: #f5c518; }
+	@keyframes ticker {
+		0% { transform: translateX(0); }
+		100% { transform: translateX(-50%); }
+	}
+
+	/* QUOTE BREAK */
+	.quote-break {
+		text-align: center;
+		padding: 2rem 0;
+		border-top: 1px solid #1a1a1a;
+		border-bottom: 1px solid #1a1a1a;
+	}
+	.quote-break blockquote {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 1.3rem;
+		font-weight: 700;
+		color: #ffffff;
+		border: none;
+		padding: 0;
+		margin: 0 0 0.5rem 0;
+		font-style: italic;
+		line-height: 1.5;
+	}
+	.quote-break cite {
+		font-size: 0.72rem;
+		color: #555;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		font-style: normal;
+	}
+
+	/* FOUR GRID (Sports) */
+	.four-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.25rem;
+	}
+	@media (max-width: 900px) {
+		.four-grid { grid-template-columns: repeat(2, 1fr); }
+	}
+	@media (max-width: 500px) {
+		.four-grid { grid-template-columns: 1fr; }
+	}
+	.four-card {
+		border: 1px solid #1e1e1e;
+		border-radius: 6px;
+		overflow: hidden;
+	}
+	.four-card img {
+		width: 100%;
+		height: 160px;
+		object-fit: cover;
+		border-radius: 0;
+		display: block;
+		transition: transform 0.4s ease;
+	}
+	.four-card:hover img { transform: scale(1.04); }
+	.card-tag-inline {
+		display: block;
+		font-size: 0.6rem;
+		font-weight: 800;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #f5c518;
+		padding: 0.75rem 0.75rem 0.2rem;
+	}
+	.four-card h3 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 0.85rem;
+		font-weight: 700;
+		line-height: 1.4;
+		padding: 0.2rem 0.75rem 0.75rem;
+		margin: 0;
+	}
+	.four-card h3 a { color: #d0d0d0; text-decoration: none; }
+	.four-card h3 a:hover { color: #fff; }
+
+	 {
+		background: #e0b015;
+		transform: translateY(-1px);
+	}
+
+	@media (max-width: 768px) {
+		.home-layout { padding: 0 1rem; }
+		.highlight-grid, .highlight-grid.reverse { grid-template-columns: 1fr; }
+		.highlight-card.large img { height: 240px; }
+	}
+</style>

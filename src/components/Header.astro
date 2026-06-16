@@ -1,4 +1,3 @@
----
 import HeaderLink from './HeaderLink.astro';
 ---
 <header>
@@ -16,25 +15,129 @@ import HeaderLink from './HeaderLink.astro';
 		<div class="top-right">
 			<a href="/signin" class="top-link">Sign In</a>
 			<button class="search-btn" id="searchToggle" aria-label="Search">
-				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+				<svg class="icon-search" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 					<circle cx="11" cy="11" r="8"></circle>
 					<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+				</svg>
+				<svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
 				</svg>
 			</button>
 		</div>
 	</div>
+
 	<nav class="category-nav">
-		<HeaderLink href="/blog">All</HeaderLink>
-		<HeaderLink href="/tech">Tech</HeaderLink>
-		<HeaderLink href="/science">Science</HeaderLink>
-		<HeaderLink href="/sports">Sports</HeaderLink>
-		<HeaderLink href="/celebs">Celebs</HeaderLink>
-		<HeaderLink href="/lifehacks">Life Hacks</HeaderLink>
-		<HeaderLink href="/money">Money</HeaderLink>
-		<HeaderLink href="/travel">Travel</HeaderLink>
+		<div class="nav-item">
+			<a href="/blog" class="nav-link">All</a>
+		</div>
+		
+		<!-- AI & TECH -->
+		<div class="nav-item has-dropdown">
+			<a href="/tech" class="nav-link">AI & Tech</a>
+			<div class="mega-menu">
+				<div class="mega-links">
+					<a href="/tech/ai-news">AI News</a>
+					<a href="/tech/gadgets">Gadgets</a>
+					<a href="/tech/apps">Apps</a>
+					<a href="/tech/cybersecurity">Cybersecurity</a>
+					<a href="/tech/space-tech">Space Tech</a>
+					<a href="/tech/future-of-work">Future of Work</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- SHOPPING -->
+		<div class="nav-item has-dropdown">
+			<a href="/shopping" class="nav-link">Shopping</a>
+			<div class="mega-menu">
+				<div class="mega-links">
+					<a href="/shopping/deals">Deals</a>
+					<a href="/shopping/gift-guides">Gift Guides</a>
+					<a href="/shopping/style-picks">Style Picks</a>
+					<a href="/shopping/gadgets">Gadgets</a>
+					<a href="/shopping/home-finds">Home Finds</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- TRAVEL -->
+		<div class="nav-item has-dropdown">
+			<a href="/travel" class="nav-link">Travel</a>
+			<div class="mega-menu">
+				<div class="mega-links">
+					<a href="/travel/destinations">Destinations</a>
+					<a href="/travel/budget-travel">Budget Travel</a>
+					<a href="/travel/luxury-travel">Luxury Travel</a>
+					<a href="/travel/travel-hacks">Travel Hacks</a>
+					<a href="/travel/visa-guides">Visa Guides</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- HEALTH -->
+		<div class="nav-item has-dropdown">
+			<a href="/health" class="nav-link">Health</a>
+			<div class="mega-menu">
+				<div class="mega-links">
+					<a href="/health/mental-health">Mental Health</a>
+					<a href="/health/fitness">Fitness</a>
+					<a href="/health/nutrition">Nutrition</a>
+					<a href="/health/sleep">Sleep</a>
+					<a href="/health/longevity">Longevity</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- FAMILY -->
+		<div class="nav-item has-dropdown">
+			<a href="/family" class="nav-link">Family</a>
+			<div class="mega-menu">
+				<div class="mega-links">
+					<a href="/family/home">Home</a>
+					<a href="/family/parenting">Parenting</a>
+					<a href="/family/relationships">Relationships</a>
+					<a href="/family/kids">Kids</a>
+					<a href="/family/marriage">Marriage</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- SPORTS -->
+		<div class="nav-item has-dropdown">
+			<a href="/sports" class="nav-link">Sports</a>
+			<div class="mega-menu">
+				<div class="mega-links">
+					<a href="/sports/football">Football</a>
+					<a href="/sports/basketball">Basketball</a>
+					<a href="/sports/tennis">Tennis</a>
+					<a href="/sports/combat-sports">Combat Sports</a>
+					<a href="/sports/motorsport">Motorsport</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- LIFESTYLE -->
+		<div class="nav-item has-dropdown">
+			<a href="/lifestyle" class="nav-link">Lifestyle</a>
+			<div class="mega-menu">
+				<div class="mega-links">
+					<a href="/lifestyle/style">Style</a>
+					<a href="/lifestyle/food">Food</a>
+					<a href="/lifestyle/culture">Culture</a>
+					<a href="/lifestyle/music">Music</a>
+					<a href="/lifestyle/home-decor">Home Decor</a>
+				</div>
+			</div>
+		</div>
 	</nav>
+
 	<div class="search-bar" id="searchBar">
 		<div class="search-inner">
+			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+				<circle cx="11" cy="11" r="8"></circle>
+				<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+			</svg>
 			<input type="text" placeholder="Search WKND Harvest..." class="search-input" id="searchInput" />
 			<button class="search-close" id="searchClose">✕</button>
 		</div>
@@ -45,23 +148,30 @@ import HeaderLink from './HeaderLink.astro';
 <script>
 	const toggle = document.getElementById('searchToggle');
 	const bar = document.getElementById('searchBar');
-	const close = document.getElementById('searchClose');
+	const closeBtn = document.getElementById('searchClose');
 	const input = document.getElementById('searchInput');
 	const overlay = document.getElementById('searchOverlay');
+	const iconSearch = toggle.querySelector('.icon-search');
+	const iconClose = toggle.querySelector('.icon-close');
 
+	function openSearch() {
+		bar.classList.add('open');
+		overlay.classList.add('open');
+		iconSearch.style.display = 'none';
+		iconClose.style.display = 'block';
+		input.focus();
+	}
+	function closeSearch() {
+		bar.classList.remove('open');
+		overlay.classList.remove('open');
+		iconSearch.style.display = 'block';
+		iconClose.style.display = 'none';
+	}
 	toggle.addEventListener('click', () => {
-		bar.classList.toggle('open');
-		overlay.classList.toggle('open');
-		if (bar.classList.contains('open')) input.focus();
+		bar.classList.contains('open') ? closeSearch() : openSearch();
 	});
-	close.addEventListener('click', () => {
-		bar.classList.remove('open');
-		overlay.classList.remove('open');
-	});
-	overlay.addEventListener('click', () => {
-		bar.classList.remove('open');
-		overlay.classList.remove('open');
-	});
+	closeBtn.addEventListener('click', closeSearch);
+	overlay.addEventListener('click', closeSearch);
 </script>
 
 <style>
@@ -147,14 +257,20 @@ import HeaderLink from './HeaderLink.astro';
 	.search-btn:hover {
 		color: #ffffff;
 	}
+
+	/* Category nav */
 	.category-nav {
 		display: flex;
 		justify-content: center;
 		padding: 0 2rem;
-		overflow-x: auto;
 		border-bottom: 1px solid #1a1a1a;
+		position: static; /* Allows menu layout to read full header width */
 	}
-	.category-nav a {
+	.nav-item {
+		position: static; /* Allows menu width to stretch past text boundaries */
+	}
+	.nav-link {
+		display: block;
 		padding: 0.75rem 1.1rem;
 		color: #aaaaaa;
 		text-decoration: none;
@@ -166,16 +282,58 @@ import HeaderLink from './HeaderLink.astro';
 		white-space: nowrap;
 		transition: color 0.2s, border-bottom-color 0.2s;
 	}
-	.category-nav a:hover,
-	.category-nav a.active {
+	.nav-link:hover,
+	.nav-link.active {
 		color: #f5c518;
 		border-bottom-color: #f5c518;
 	}
+
+	/* Wide horizontal breakout mega menu */
+	.mega-menu {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		width: 100%;
+		box-sizing: border-box;
+		background: #111111;
+		border-bottom: 2px solid #f5c518;
+		padding: 1.2rem 2rem;
+		z-index: 200;
+		box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+	}
+	.has-dropdown:hover .mega-menu {
+		display: block;
+	}
+	
+	/* Horizontal links alignment layout */
+	.mega-links {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 3.5rem; /* Generous wide look space between subtopics */
+		width: 100%;
+	}
+	.mega-links a {
+		font-size: 0.75rem;
+		color: #aaaaaa;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		transition: color 0.2s;
+	}
+	.mega-links a:hover {
+		color: #f5c518; /* Accents matching your system theme */
+	}
+
+	/* Search bar */
 	.search-bar {
 		display: none;
 		position: relative;
 		z-index: 101;
-		background: #1e1e1e;
+		background: #1a1a1a;
 		border-bottom: 1px solid #2a2a2a;
 	}
 	.search-bar.open {
@@ -185,8 +343,8 @@ import HeaderLink from './HeaderLink.astro';
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 1rem;
-		padding: 1rem 2rem;
+		gap: 0.75rem;
+		padding: 0.8rem 2rem;
 	}
 	.search-input {
 		width: 50%;
@@ -225,13 +383,13 @@ import HeaderLink from './HeaderLink.astro';
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba(0, 0, 0, 0.7);
+		background: rgba(0,0,0,0.7);
 		z-index: 99;
-		pointer-events: all;
 	}
 	.search-overlay.open {
 		display: block;
 	}
+
 	@media (max-width: 720px) {
 		.top-bar {
 			padding: 1rem;
@@ -246,10 +404,14 @@ import HeaderLink from './HeaderLink.astro';
 		.category-nav {
 			padding: 0 0.5rem;
 			justify-content: flex-start;
+			overflow-x: auto; /* Restored safely for mobile slide swiping rows */
 		}
-		.category-nav a {
+		.nav-link {
 			padding: 0.6rem 0.7rem;
 			font-size: 0.65rem;
+		}
+		.mega-menu {
+			display: none !important; /* Hides giant bars cleanly on tiny touch mobile viewports */
 		}
 		.search-input {
 			width: 85%;
